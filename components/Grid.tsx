@@ -15,10 +15,16 @@ export interface GridProps {
 export function Grid(props: GridProps) {
   const { cells } = props
 
+  const handleClickCell = ({ axisX, axisY, value }: any) => {
+    console.log({ axisX, axisY, value })
+  }
+
   const renderCells = () => (
-    cells.map((axlesX: string[], indexY: number) => (
-      axlesX.map((axis: string, indexX: number) => (
-        <Cell key={`${indexY}-${indexX}`} data={axis} />
+    cells.map((axlesX: string[], axisY: number) => (
+      axlesX.map((value: string, axisX: number) => (
+        <Cell key={`${axisY}-${axisX}`} data={value} onClick={() => handleClickCell({
+          axisX, axisY, value,
+        })} />
       ))
     ))
   )

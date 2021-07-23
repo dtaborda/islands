@@ -6,11 +6,14 @@ import {
   Logo,
 } from '../components';
 
+import { useData } from '../hooks'
+
 export default function Home() {
 
+  const { tinyWorld } = useData({ axlesX: 3, axlesY: 7 })
+
   const gridProps: DashboardProps = {
-    axlesX: 8,
-    axlesY: 5,
+    tinyWorld,
     islandCounter: 0,
   }
 

@@ -43,6 +43,7 @@ const theme = {
     lighterGrey: "#d6d7da",
     grey: '#ffffff1e',
     darkerGrey: '#333333',
+    blue: "#08d1ff",
   },
   sizes: {
     xs: '0.5rem', //8px

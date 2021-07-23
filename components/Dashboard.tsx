@@ -12,24 +12,20 @@ const Container: any = styled.div`
 `
 
 export interface DashboardProps {
-  axlesX: number
-  axlesY: number
+  tinyWorld: any
   islandCounter: number
 }
 
 export function Dashboard(props: DashboardProps) {
   const {
-    axlesX,
-    axlesY,
     islandCounter,
+    tinyWorld,
   } = props
-
-  const cells = Array(axlesX).fill(Array(axlesY).fill(0));
 
   return (
     <Container>
       <Title>Number of islands discovered: {islandCounter}</Title>
-      <Grid cells={cells} />
+      <Grid cells={tinyWorld} />
     </Container>
   )
 }
