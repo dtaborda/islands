@@ -1,17 +1,17 @@
 import Head from 'next/head'
-import styled from 'styled-components'
-
-import { Dashboard, DashboardProps } from '../components';
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
+import {
+  Dashboard,
+  DashboardProps,
+  Layout,
+  Logo,
+} from '../components';
 
 export default function Home() {
 
   const gridProps: DashboardProps = {
-    axlesX: 2, axlesY: 4
+    axlesX: 8,
+    axlesY: 5,
+    islandCounter: 0,
   }
 
   return (
@@ -21,10 +21,12 @@ export default function Home() {
         <meta name="description" content="Creating island" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <Title>Island</Title>
+      <Layout
+        header={<Logo>Island</Logo>}
+        footer={<Logo>Footer</Logo>}
+      >
         <Dashboard {...gridProps} />
-      </div>
+      </Layout>
     </>
   )
 }
