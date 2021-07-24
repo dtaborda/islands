@@ -1,1 +1,2 @@
-export { default as useData } from './data';
+export { useData } from './data';
+export { useSelector } from './selector';

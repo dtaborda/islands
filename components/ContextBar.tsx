@@ -13,6 +13,10 @@ export interface ContextBarProps {
   islandCounter: number
   tinyWorldHeightOptions: SelectOptionsProps[]
   tinyWorldWidthOptions: SelectOptionsProps[]
+  tinyWorldHeight: SelectOptionsProps
+  tinyWorldWidth: SelectOptionsProps
+  setTinyWorldHeight: any
+  setTinyWorldWidth: any
 }
 
 export function ContextBar(props: ContextBarProps) {
@@ -20,6 +24,10 @@ export function ContextBar(props: ContextBarProps) {
     islandCounter,
     tinyWorldHeightOptions,
     tinyWorldWidthOptions,
+    tinyWorldHeight,
+    tinyWorldWidth,
+    setTinyWorldHeight,
+    setTinyWorldWidth,
   } = props
 
   return (
@@ -27,14 +35,14 @@ export function ContextBar(props: ContextBarProps) {
       <Title>Number of islands discovered: {islandCounter}</Title>
       <Select
         label="Height"
-        value={tinyWorldHeightOptions[0]}
-        onChange={(e: any) => { console.log(e) }}
+        value={tinyWorldHeight}
+        onChange={setTinyWorldHeight}
         options={tinyWorldHeightOptions}
       />
       <Select
         label="Width"
-        value={tinyWorldWidthOptions[0]}
-        onChange={(e: any) => { console.log(e) }}
+        value={tinyWorldWidth}
+        onChange={setTinyWorldWidth}
         options={tinyWorldWidthOptions}
       />
     </Container>

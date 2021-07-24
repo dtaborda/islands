@@ -8,7 +8,7 @@ import {
   Logo,
 } from '../components';
 
-import { useData } from '../hooks'
+import { useData, useSelector } from '../hooks'
 
 const genSelectorOption = (max: number) => {
   const options = []
@@ -24,7 +24,16 @@ const tinyWorldWidthOptions = genSelectorOption(12)
 
 export default function Home() {
 
-  const { tinyWorld } = useData({ axlesX: 3, axlesY: 7 })
+  const {
+    tinyWorldHeightOptions,
+    tinyWorldWidthOptions,
+    tinyWorldHeight,
+    tinyWorldWidth,
+    setTinyWorldHeight,
+    setTinyWorldWidth,
+  } = useSelector()
+
+  const { tinyWorld } = useData({ axlesX: tinyWorldWidth.value, axlesY: tinyWorldHeight.value })
 
   const gridProps: DashboardProps = {
     tinyWorld,
@@ -34,6 +43,10 @@ export default function Home() {
     islandCounter: 0,
     tinyWorldWidthOptions,
     tinyWorldHeightOptions,
+    tinyWorldHeight,
+    tinyWorldWidth,
+    setTinyWorldHeight,
+    setTinyWorldWidth,
   }
 
   return (
