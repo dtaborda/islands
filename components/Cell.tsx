@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const CellContainer: any = styled.button`
   height: ${({ theme }) => theme.sizes.cell};
   width: ${({ theme }) => theme.sizes.cell};
-  background-color: ${({ theme, data }: any) => data ? theme.colors.white : theme.colors.primary};
+  background-color: ${({ theme, data }: any) => data.value ? theme.colors.white : theme.colors.primary};
   border: 1px dotted ${({ theme }) => theme.colors.blue};
   cursor: pointer;
   &:hover {
@@ -12,20 +12,26 @@ const CellContainer: any = styled.button`
     border: 1px dotted ${({ theme }) => theme.colors.white};
   }
   &:active {
-    background-color: ${({ theme, data }: any) => data ? theme.colors.white : theme.colors.white};
+    background-color: ${({ theme, data }: any) => data.value ? theme.colors.white : theme.colors.white};
     border: 2px solid ${({ theme }) => theme.colors.primary};
   }
 `
 
 export interface CellProps {
-  data: string
-  onClick: () => void
+  data: any
+  onClick: (data: any) => void
 }
 
 export function Cell(props: CellProps) {
   const { data, onClick } = props
 
+  const handleClick = () => {
+    onClick(data)
+  }
+
   return (
-    <CellContainer data={data} onClick={onClick}/>
+    <CellContainer data={data} onClick={handleClick}>
+      {`X${data.axisX}-Y${data.axisY}-V${data.value}`}
+    </CellContainer>
   )
 }

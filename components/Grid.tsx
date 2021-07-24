@@ -10,26 +10,21 @@ const GridContainer: any = styled.div`
 `
 export interface GridProps {
   cells: string[][]
+  onCellClick: (data: any) => void
 }
 
 export function Grid(props: GridProps) {
-  const { cells } = props
-
-  const handleClickCell = ({ axisX, axisY, value }: any) => {
-    console.log({ axisX, axisY, value })
-  }
-
+  const { cells, onCellClick } = props
+  
   const renderCells = () => (
     cells.map((axlesX: string[], axisY: number) => (
       axlesX.map((value: string, axisX: number) => (
-        <Cell key={`${axisY}-${axisX}`} data={value} onClick={() => handleClickCell({
-          axisX, axisY, value,
-        })} />
+        <Cell key={`${axisY}-${axisX}`} data={{ axisX, axisY, value }} onClick={onCellClick} />
       ))
     ))
   )
 
   return (
-    <GridContainer columns={cells.length}>{renderCells()}</GridContainer>
+    <GridContainer columns={cells[0].length}>{renderCells()}</GridContainer>
   )
 }

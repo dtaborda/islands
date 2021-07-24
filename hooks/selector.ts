@@ -11,7 +11,7 @@ const genSelectorOption = (max: number) => {
 export function useSelector() {
   const tinyWorldHeightOptions = genSelectorOption(8)
   const tinyWorldWidthOptions = genSelectorOption(12)
-  const [tinyWorldHeight, setTinyWorldHeight] = useState(tinyWorldHeightOptions[0])
+  const [tinyWorldHeight, setTinyWorldHeight] = useState(tinyWorldHeightOptions[3])
   const [tinyWorldWidth, setTinyWorldWidth] = useState(tinyWorldWidthOptions[0])
 
   return {

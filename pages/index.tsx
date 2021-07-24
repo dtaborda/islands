@@ -10,20 +10,7 @@ import {
 
 import { useData, useSelector } from '../hooks'
 
-const genSelectorOption = (max: number) => {
-  const options = []
-  for (let index = 5; index <= max; index++) {
-    options.push({ value: index, label: `${index}`})
-  }
-  return options;
-}
-
-const tinyWorldHeightOptions = genSelectorOption(8)
-
-const tinyWorldWidthOptions = genSelectorOption(12)
-
 export default function Home() {
-
   const {
     tinyWorldHeightOptions,
     tinyWorldWidthOptions,
@@ -33,11 +20,10 @@ export default function Home() {
     setTinyWorldWidth,
   } = useSelector()
 
-  const { tinyWorld } = useData({ axlesX: tinyWorldWidth.value, axlesY: tinyWorldHeight.value })
-
-  const gridProps: DashboardProps = {
-    tinyWorld,
-  }
+  const gridProps: DashboardProps = useData({ 
+    axlesX: tinyWorldWidth.value, 
+    axlesY: tinyWorldHeight.value,
+  })
 
   const contextBarProps: ContextBarProps = {
     islandCounter: 0,

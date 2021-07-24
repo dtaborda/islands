@@ -11,16 +11,18 @@ const Container: any = styled.div`
 
 export interface DashboardProps {
   tinyWorld: any
+  onCreateIsland: any
 }
 
 export function Dashboard(props: DashboardProps) {
   const {
     tinyWorld,
+    onCreateIsland,
   } = props
 
   return (
     <Container>
-      <Grid cells={tinyWorld} />
+      <Grid cells={tinyWorld} onCellClick={onCreateIsland} />
     </Container>
   )
 }
