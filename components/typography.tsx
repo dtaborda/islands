@@ -9,3 +9,7 @@ export const Logo = styled.span`
   font-size: ${({ theme }) => theme.sizes.md};
   color: ${({ theme }) => theme.colors.white};
 `
+
+export const Label = styled.span`
+  color: ${({ theme }) => theme.colors.white};
+`

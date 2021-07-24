@@ -1,8 +1,6 @@
 import React from 'react'
-import { Grid } from './Grid';
-import { Title } from './typography';
-
 import styled from 'styled-components'
+import { Grid } from './Grid';
 
 const Container: any = styled.div`
   display: flex;
@@ -13,18 +11,15 @@ const Container: any = styled.div`
 
 export interface DashboardProps {
   tinyWorld: any
-  islandCounter: number
 }
 
 export function Dashboard(props: DashboardProps) {
   const {
-    islandCounter,
     tinyWorld,
   } = props
 
   return (
     <Container>
-      <Title>Number of islands discovered: {islandCounter}</Title>
       <Grid cells={tinyWorld} />
     </Container>
   )

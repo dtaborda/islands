@@ -51,7 +51,7 @@ const theme = {
     md: '2rem', //32px
     lg: '3rem', //48px
     xl: '4rem', //64px
-    cell: '5rem', //75px	
+    cell: '5rem', //75px
   }
 }
 
