@@ -8,33 +8,40 @@ import {
   Logo,
 } from '../components';
 
-import { useData, useSelector } from '../hooks'
+import {
+  useData,
+  useIsland,
+  useSelector,
+} from '../hooks'
 
 export default function Home() {
-  const {
-    tinyWorldHeightOptions,
-    tinyWorldWidthOptions,
-    tinyWorldHeight,
-    tinyWorldWidth,
-    setTinyWorldHeight,
-    setTinyWorldWidth,
-  } = useSelector()
+  const selectorData: any = useSelector()
 
-  const gridProps: DashboardProps = useData({ 
+  const {
+    tinyWorldWidth,
+    tinyWorldHeight,
+  } = selectorData
+
+  const gridProps = useData({ 
     axlesX: tinyWorldWidth.value, 
     axlesY: tinyWorldHeight.value,
   })
 
-  const contextBarProps: ContextBarProps = {
-    islandCounter: 0,
-    tinyWorldWidthOptions,
-    tinyWorldHeightOptions,
-    tinyWorldHeight,
-    tinyWorldWidth,
-    setTinyWorldHeight,
-    setTinyWorldWidth,
-  }
+  const { 
+    tinyWorld,
+    landLotDataSelected,
+  } = gridProps
 
+  const islandData: any = useIsland({
+    tinyWorld,
+    landLotDataSelected,
+  })
+
+  const contextBarProps: ContextBarProps = {
+    ...islandData,
+    ...selectorData,
+  }
+  
   return (
     <>
       <Head>

@@ -25,7 +25,8 @@ export interface CellProps {
 export function Cell(props: CellProps) {
   const { data, onClick } = props
 
-  const handleClick = () => {
+  const handleClick = (event: any) => {
+    event.stopPropagation()
     onClick(data)
   }
 
