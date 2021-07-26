@@ -49,12 +49,12 @@ island
 └── publick.tsx
 ```
 
-**components**
+#### components ####
 This is where your React components are living. Each component is containing the `.tsx` file and the UI logic, and to styled those were configured [`styled-components`](https://styled-components.com/) library because of the use of props in the place of classes and encapsulate styling.
 
 ***TODO***: replacing the `.tsx` file to folder which contais the `.tsx` file, along with a `story.tsx` file, and optionally `.presets`, and `.props` files for larger components.
 
-**hooks**
+#### hooks ####
 This is where the island app's logic is living. With Custom React Hooks you can extract these reusable stateful logics and test them separately and also using hooks, logic and UI are easier to separate
 in app's Island has custom hooks like: 
 * `useData`: contains the  `tiny World` structure, it's a matrix where the states of islands are stored and have the logic for creating an island. the `useData` export the `tiny world` matrix and the crate island actions `onCreateIsland`
@@ -64,23 +64,23 @@ The basic idea behind this data structure is to repeatedly merge elements in the
 
 For getting more info about the union-find algorithm, visit the [wiki](https://en.wikipedia.org/wiki/Disjoint-set_data_structure)
 
-**pages**
+#### pages ####
 This is where your pages components are live. In [Next.js](https://nextjs.org/), a page is a React Component exported from a `.tsx` file in the pages directory. Each page is associated with a route based on its file name. Example: If you create `pages/island.tsx` that exports a React component like below, it will be accessible at `/island`.
 
 ## TODO
 
 ### ./island directory
 
-**theme**
+#### theme ####
 Here lives the theme for Island app, including spacing, colors, and typography.
 the theme is living in `_app.tsx` file in pages folder
 
-**utils**
+#### utils ####
 This is a great place to put miscellaneous helpers and utilities. Things like formatters, maybe the `union-find` algorithm if the algorithm will be used from other hooks or sections, etc. are often found here. However, it should only be used for things that are truely shared across your application. If a helper or utility is only used by a specific component or model, consider co-locating your helper with that component or model.
 
-***storybook***
+#### storybook ####
 This is where your stories will be registered and where the Storybook configs will live
 
-***test***
+#### test ####
 This directory will hold your Jest configs and mocks, as well as your [storyshots](https://github.com/storybooks/storybook/tree/master/addons/storyshots) test file. This is a file that contains the snapshots of all your component storybooks.
 
