@@ -22,5 +22,7 @@ export function useData({ axlesX, axlesY }: any) {
     tinyWorld,
     onCreateIsland,
     landLotDataSelected,
+    axlesX,
+    axlesY,
   }
 }
