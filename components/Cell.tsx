@@ -4,16 +4,18 @@ import styled from 'styled-components'
 const CellContainer: any = styled.button`
   height: ${({ theme }) => theme.sizes.cell};
   width: ${({ theme }) => theme.sizes.cell};
-  background-color: ${({ theme, data }: any) => data.value ? theme.colors.white : theme.colors.primary};
-  border: 1px dotted ${({ theme }) => theme.colors.blue};
+  background-color: ${({ theme, data }: any) => data.value ? theme.colors.green : theme.colors.primary};
+  border-right: 1px dotted ${({ theme, data }: any) => data.value ? theme.colors.lightGreen : theme.colors.blue};
+  border-bottom: 1px dotted ${({ theme, data }: any) => data.value ? theme.colors.lightGreen : theme.colors.blue};
+  border-left: none;
+  border-top: none;
   cursor: pointer;
   &:hover {
-    opacity:0.1;
-    border: 1px dotted ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme, data }: any) => data.value ? theme.colors.lightGreen : theme.colors.blue};
   }
   &:active {
-    background-color: ${({ theme, data }: any) => data.value ? theme.colors.white : theme.colors.white};
-    border: 2px solid ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme, data }: any) => data.value ? theme.colors.green : theme.colors.primary};
+    border: 3px solid ${({ theme, data }: any) => data.value ? theme.colors.green : theme.colors.primary};
   }
 `
 
@@ -31,8 +33,6 @@ export function Cell(props: CellProps) {
   }
 
   return (
-    <CellContainer data={data} onClick={handleClick}>
-      {`X${data.axisX}-Y${data.axisY}-V${data.value}`}
-    </CellContainer>
+    <CellContainer data={data} onClick={handleClick} />
   )
 }

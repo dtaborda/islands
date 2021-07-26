@@ -3,9 +3,9 @@ import {
   ContextBar,
   ContextBarProps,
   Dashboard,
-  DashboardProps,
   Layout,
   Logo,
+  Text,
 } from '../components';
 
 import {
@@ -50,10 +50,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout
-        header={<Logo>Island</Logo>}
-        footer={<Logo>Footer</Logo>}
+        header={
+          <ContextBar {...contextBarProps} />
+        }
+        footer={<Text>Damian Taborda, Software Engineer</Text>}
       >
-        <ContextBar {...contextBarProps} />
         <Dashboard {...gridProps} />
       </Layout>
     </>

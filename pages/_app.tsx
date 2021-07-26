@@ -44,6 +44,8 @@ const theme = {
     grey: '#ffffff1e',
     darkerGrey: '#333333',
     blue: "#08d1ff",
+    lightGreen: "#81ecec",
+    green: "#1abc9c",
   },
   sizes: {
     xs: '0.5rem', //8px

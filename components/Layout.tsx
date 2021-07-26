@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Header = styled.header`
-  min-height: ${({ theme }) => theme.sizes.xl};
   background-color: ${({ theme }) => theme.colors.darkerGrey};
   padding: ${({ theme }) => theme.sizes.sm};
 `
@@ -14,7 +13,9 @@ const Main = styled.main`
 `
 
 const Footer = styled.footer`
-  min-height: ${({ theme }) => theme.sizes.xl};
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: ${({ theme }) => theme.colors.background};
   border-top: 1px solid ${({ theme }) => theme.colors.grey};;
   padding: ${({ theme }) => theme.sizes.sm};
