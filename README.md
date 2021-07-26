@@ -1,6 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# Islands
+# Islands - Tiny World
+
+<img width="1437" alt="Screen Shot 2021-07-26 at 01 47 28" src="https://user-images.githubusercontent.com/882516/126934468-63c51e7a-075a-4a6a-b2cd-1cd6652b8b5e.png">
 
 ## Getting Started
 
@@ -65,7 +67,7 @@ For getting more info about the union-find algorithm, visit the [wiki](https://e
 **pages**
 This is where your pages components are live. In [Next.js](https://nextjs.org/), a page is a React Component exported from a `.tsx` file in the pages directory. Each page is associated with a route based on its file name. Example: If you create `pages/island.tsx` that exports a React component like below, it will be accessible at `/island`.
 
-## TODOS
+## TODO
 
 ### ./island directory
 
